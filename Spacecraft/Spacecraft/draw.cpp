@@ -759,38 +759,30 @@ void drawGameOver(){
     glPopMatrix();
 }
 
-void drawHPred(){
+void drawHealthBar(){
     glPushMatrix();
 
-    glBegin(GL_QUADS);
-    glColor3b(255, 0, 0);
+    glTranslated(-0.884,-0.96,0);
+    glTranslated(SpaceCraft_info.pos.x, SpaceCraft_info.pos.y, 0);
+    glScaled(0.2,0.2,0.2);
 
-    glTranslated(SpaceCraft_info.pos.x+0.1,SpaceCraft_info.pos.y+0.1,0);
-    glScalef(0.3,0.3,0);
-    glVertex2f(1,0.2);
-    glVertex2f(-1,0.2);
-    glVertex2f(-1,-0.2);
-    glVertex2f(1,-0.2);
+    glBegin(GL_QUADS);
+    glColor3ub(255,0,0);
+
+    glVertex2f(0,0.2);
+    glVertex2f(0.8,0.2);
+    glVertex2f(0.8,0.25);
+    glVertex2f(0,0.25);
+
+    glColor3ub(0,255,0);
+
+    glVertex2f(0,0.2);
+    glVertex2f(SpaceCraft_info.health*0.008,0.2);
+    glVertex2f(SpaceCraft_info.health*0.008,0.25);
+    glVertex2f(0,0.25);
 
     glEnd();
 
     glPopMatrix();
 }
 
-void drawHPgreen(){
-    glPushMatrix();
-
-    glBegin(GL_QUADS);
-    glColor3b(0, 255, 0);
-
-    glTranslated(SpaceCraft_info.pos.x,SpaceCraft_info.pos.y,0);
-    glScalef(0.3,0.3,0);
-    glVertex2f(1,0.2);
-    glVertex2f(-1,0.2);
-    glVertex2f(-1,-0.2);
-    glVertex2f(1,-0.2);
-
-    glEnd();
-
-    glPopMatrix();
-}
