@@ -30,7 +30,7 @@ void renderScene() {
     spaceStation();
     spaceCraft(SpaceCraft_info);
     collisionBump(SpaceCraft_info);
-    //spacecraftHP();
+    drawHealthBar();
     glutSwapBuffers();
 }
 
@@ -52,8 +52,5 @@ void processKeys(unsigned char key, int x, int y){
             exit(0);
         }
     }
-
-    std::cout<<"X: "<<SpaceCraft_info.pos.x<<" -- "<<"Y: "<<SpaceCraft_info.pos.y<<std::endl;
-    std::cout<<SpaceCraft_info.health<<std::endl;
     glutPostRedisplay();
 }
