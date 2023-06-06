@@ -22,8 +22,6 @@ void spaceStation();
 void drawGameWin();
 void drawGameOver();
 void collisionBump(Figure f);
-void drawHPred();
-void drawHPgreen();
-void spacecraftHP();
+void drawHealthBar();
 
 #endif // DRAW_H
